@@ -1,93 +1,156 @@
-Vue.js bietet eine breite Palette von Funktionen und Optionen, die Entwicklern Flexibilität und Effizienz bieten. Hier ist eine strukturierte Übersicht über die wichtigsten Listen von **Funktionen** und **Optionen** in Vue.js:
+## **1️⃣ Options API – Alle verfügbaren Optionen**
+
+### **Data-Optionen**
+- **data**: Initialisiert den Zustand der Komponente.
+- **props**: Empfängt Daten von Elternkomponenten.
+- **propsData**: Übergibt Props an die Komponente (nur bei `Vue.extend`).
+- **computed**: Berechnete Eigenschaften, die auf abhängigen Daten basieren.
+- **methods**: Definiert Funktionen innerhalb der Komponente.
+- **watch**: Überwacht Datenänderungen und reagiert darauf.
 
 ---
 
-## 1️⃣ **Options API**
-Die Options API ist die traditionelle Methode zur Definition von Komponenten.
+### **Template-Optionen**
+- **template**: HTML-Template für die Komponente.
+- **render**: Nutzt eine Render-Funktion anstelle eines Templates.
+- **renderError**: Debugging für Render-Fehler.
 
-### **Globale Optionen**
-- **el**: Ziel-Element.
-- **data**: Zustandsdaten der Komponente.
-- **methods**: Methoden zur Verarbeitung von Daten.
-- **computed**: Berechnete Eigenschaften.
-- **watch**: Beobachter für reaktive Daten.
-- **template**: HTML-Template der Komponente.
+---
+
+### **Lifecycle-Hooks**
+- **beforeCreate**: Vor der Initialisierung der Instanz.
+- **created**: Nach der Initialisierung der Instanz.
+- **beforeMount**: Vor dem Mounten der Komponente.
+- **mounted**: Nach dem Mounten der Komponente.
+- **beforeUpdate**: Vor einem Daten-Update.
+- **updated**: Nach einem Daten-Update.
+- **beforeUnmount**: Vor dem Entfernen der Komponente.
+- **unmounted**: Nach dem Entfernen der Komponente.
+
+---
+
+### **Andere Optionen**
+- **el**: Gibt das Ziel-HTML-Element an.
 - **components**: Lokale Komponentenregistrierung.
-- **props**: Eigenschaften, die von der Elternkomponente übergeben werden.
-- **directives**: Lokale Direktivenregistrierung.
-- **filters**: Globale und lokale Filter.
-- **mixins**: Hinzufügen von geteilten Funktionen.
-- **emits**: Ereignisse, die von der Komponente ausgelöst werden.
-- **inheritAttrs**: Ob Standardattribute geerbt werden.
+- **directives**: Lokale benutzerdefinierte Direktiven.
+- **filters**: Definiert lokale Filter.
+- **provide** und **inject**: Ermöglicht Datenweitergabe in der Komponenten-Hierarchie.
+- **mixins**: Mischen von Code aus mehreren Quellen.
+- **extends**: Vererbung von Basiskomponenten.
+- **emits**: Definiert auslösbare Ereignisse.
+- **inheritAttrs**: Kontrolle über die Vererbung von Attributen.
 
 ---
 
-## 2️⃣ **Composition API**
-Diese API bietet eine flexiblere Methode, um logikzentrierte und wiederverwendbare Code-Module zu schreiben.
+## **2️⃣ Composition API – Alle Funktionen**
 
-### **Hauptmethoden**
-- **reactive()**: Erstellt einen reaktiven Zustand.
-- **ref()**: Erstellt einen reaktiven Referenzwert.
-- **computed()**: Berechnete Werte basierend auf reaktiven Daten.
-- **watch()**: Beobachtet reaktive Daten oder Änderungen.
-- **watchEffect()**: Führt Effekte bei Änderungen aus.
-- **onMounted()**: Lifecycle-Hook nach dem Mounting.
-- **onUnmounted()**: Lifecycle-Hook nach dem Unmounting.
-- **onUpdated()**: Nach einem DOM-Update.
-- **provide()** und **inject()**: Abhängigkeitsinjektion zwischen Eltern- und Kind-Komponenten.
+### **Reaktive Datenverwaltung**
+- **ref()**: Erstellt reaktive primitive Werte.
+- **reactive()**: Erstellt reaktive Objekte.
+- **readonly()**: Erstellt ein schreibgeschütztes Objekt.
+- **shallowRef()**: Reaktivität nur auf oberster Ebene.
+- **shallowReactive()**: Reaktivität nur auf oberster Ebene.
+- **toRef()**: Wandelt eine Objekteigenschaft in eine Ref um.
+- **toRefs()**: Konvertiert alle Eigenschaften eines Objekts in Refs.
 
 ---
 
-## 3️⃣ **Directives**
-### **Globale Direktiven**
-- `v-bind`: Bindet Attribute oder Eigenschaften.
-- `v-model`: Zwei-Wege-Datenbindung.
-- `v-for`: Iteration über Listen oder Objekte.
-- `v-if`, `v-else-if`, `v-else`: Bedingtes Rendering.
-- `v-show`: Zeigt oder verbirgt Elemente.
-- `v-on`: Fügt Ereignis-Listener hinzu.
-- `v-slot`: Slot-Inhalt für benutzerdefinierte Inhalte.
-- `v-html`: Fügt HTML-Inhalte ein.
-- `v-text`: Fügt Textinhalte ein.
+### **Berechnete Eigenschaften**
+- **computed()**: Erstellt berechnete Eigenschaften.
 
 ---
 
-## 4️⃣ **Lifecycle Hooks**
-- **beforeCreate()**: Bevor die Instanz erstellt wird.
-- **created()**: Direkt nach der Erstellung.
-- **beforeMount()**: Bevor das DOM gemountet wird.
-- **mounted()**: Direkt nach dem Mounten.
-- **beforeUpdate()**: Bevor die Daten aktualisiert werden.
-- **updated()**: Nach der Aktualisierung.
-- **beforeDestroy()** (oder **beforeUnmount()**): Vor dem Zerstören.
-- **destroyed()** (oder **unmounted()**): Nach dem Zerstören.
+### **Beobachtungsfunktionen**
+- **watch()**: Überwacht Änderungen an reaktiven Daten oder Refs.
+- **watchEffect()**: Führt einen Effekt automatisch aus, wenn Daten sich ändern.
 
 ---
 
-## 5️⃣ **Globale API**
-### **Vue 3 Features**
-- **createApp()**: Erstellt eine Vue-App.
-- **h()**: Funktion zum Erstellen von virtuellen DOM-Knoten.
-- **defineComponent()**: Definiert eine neue Komponente.
-- **nextTick()**: Führt einen Codeblock beim nächsten DOM-Update aus.
-- **useRouter()**, **useStore()**: Router- und Store-Integrationen.
+### **Lifecycle-Hooks**
+- **onBeforeMount()**
+- **onMounted()**
+- **onBeforeUpdate()**
+- **onUpdated()**
+- **onBeforeUnmount()**
+- **onUnmounted()**
+- **onErrorCaptured()**
+- **onRenderTracked()**
+- **onRenderTriggered()**
 
 ---
 
-## 6️⃣ **Tools und Erweiterungen**
-- **Vue Router**: Für SPA-Routing.
-- **Vuex (oder Pinia)**: Für State Management.
-- **Vue DevTools**: Debugging und Performance-Analyse.
-- **Vite**: Entwicklungsserver und Bundler.
+### **Utility-Funktionen**
+- **provide()** und **inject()**: Für Datenweitergabe zwischen Komponenten.
+- **isRef()**, **isReactive()**, **isReadonly()**, **isProxy()**: Prüfen von Objekteigenschaften.
+- **customRef()**: Erstellt benutzerdefinierte Refs.
+- **triggerRef()**: Manuelles Auslösen von Ref-Aktualisierungen.
 
 ---
 
-## 7️⃣ **Sonstiges**
-- **Transition**: Animationsunterstützung für DOM-Elemente.
-- **SSR (Server-Side Rendering)**: Für SEO und schnelle Ladezeiten.
-- **Custom Directives**: Eigene Direktiven erstellen.
-- **Plugins**: Globale Funktionen hinzufügen.
+## **3️⃣ Globale API**
+
+### **App-Erstellung**
+- **createApp()**: Startet eine neue Vue-App.
+- **createSSRApp()**: Startet eine App mit Server-Side Rendering.
 
 ---
 
-Falls du für eine bestimmte Funktion oder Option ein Beispiel benötigst, lass es mich wissen! 🔨🤖🔧
+### **Utilities**
+- **nextTick()**: Führt einen Callback nach dem nächsten DOM-Update aus.
+- **defineComponent()**: Erstellt eine neue Komponente.
+- **h()**: Erstellt virtuelle DOM-Knoten.
+
+---
+
+### **Globale Konfiguration**
+- **app.config.globalProperties**: Globale Eigenschaften für die App.
+- **app.config.performance**: Aktiviert Performance-Monitoring.
+- **app.use()**: Verwendet Plugins.
+
+---
+
+## **4️⃣ Direktiven**
+
+### **Vorgefertigte Direktiven**
+- **v-bind**: Bindet Attribute oder Eigenschaften.
+- **v-model**: Bindet Eingabewerte.
+- **v-for**: Iteration über Listen.
+- **v-if**, **v-else-if**, **v-else**: Bedingtes Rendering.
+- **v-show**: Zeigt oder verbirgt Elemente.
+- **v-on**: Fügt Ereignis-Listener hinzu.
+- **v-slot**: Definiert Slots in Templates.
+- **v-html**: Fügt HTML direkt ein.
+- **v-text**: Fügt Text direkt ein.
+
+---
+
+## **5️⃣ Vue Router**
+
+### **Router-Konfiguration**
+- **createRouter()**: Erstellt eine neue Router-Instanz.
+- **createWebHistory()**: Aktiviert HTML5-History-Modus.
+- **createWebHashHistory()**: Aktiviert Hash-Modus.
+
+### **Navigation**
+- **router.push()**: Navigiert zu einer neuen Route.
+- **router.replace()**: Ersetzt die aktuelle Route.
+- **router.beforeEach()**: Globaler Guard vor der Navigation.
+
+---
+
+## **6️⃣ Pinia (State Management)**
+
+### **Pinia-Funktionen**
+- **defineStore()**: Erstellt einen Store.
+- **storeToRefs()**: Konvertiert State und Getter in Refs.
+- **mapStores()**: Verbindet mehrere Stores mit einer Komponente.
+
+---
+
+## **7️⃣ Plugins und Erweiterungen**
+
+### **Plugins**
+- **Vue DevTools**: Debugging-Werkzeug für Vue.
+- **Vue Router**: Routing für SPAs.
+- **Pinia**: State-Management.
+- **Vite**: Schneller Entwicklungsserver und Bundler.
